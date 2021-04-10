@@ -9,7 +9,7 @@
 #include<stdlib.h>
 
 void principal();
-int perfectnumber(int);
+int Perfecto(int);
 void MostrarPerfectos(int);
 int main(void)
 {
@@ -29,7 +29,7 @@ void principal()
 	MostrarPerfectos(n);
 }
 
-int perfectnumber(int n)
+int Perfecto(int n)
 {
 	//well this part we have to find the divisors
 	int current=0;
@@ -52,17 +52,13 @@ void MostrarPerfectos(int n)
 	int aux,j;
 	int i=5;
 	while(flag<n)//now means the quantity of numbers
-	{	
+	{		
 		i++;
-		aux=perfectnumber(i);
+		aux=Perfecto(i);
 		if(aux!=0)
 		{
 			printf("%d\n",aux);
 			flag++;
-		}
-		else
-		{
-			flag=0;
 		}
 	}
 }
