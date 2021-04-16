@@ -1,16 +1,16 @@
-//Instituto PolitÈcnico Nacional
-//Escuela Superior de CÛmputo
-//An·lisis de Algoritmos
+//Instituto Polit√©cnico Nacional
+//Escuela Superior de C√≥mputo
+//An√°lisis de Algoritmos
 //3CV11
-//Pr·ctica 3
+//Pr√°ctica 3
 //Flores Castro Luis Antonio
-//Profesor: Luna Benoso BenjamÌn.
+//Profesor: Luna Benoso Benjam√≠n.
 #include<stdio.h>
 #include<stdlib.h>
 
 void principal();
 int Perfecto(int);
-void MostrarPerfectos(int);
+void MostrarPerfectos(int,int*);
 int main(void)
 {
 	principal();
@@ -20,14 +20,21 @@ int main(void)
 
 void principal()
 {
+	int *cont=(int*)malloc(sizeof(int));
+	*cont=0;
+	
+
 	int n;
 	//first we have to get divisors
 	printf("Perfect Number\n");
-	printf("Enter: ");
+	printf("n: ");
 	scanf("%d",&n);
 	
-	MostrarPerfectos(n);
+	MostrarPerfectos(n,cont);
+	printf("\nPasos: %d", *cont);
+	printf("\n");
 }
+
 
 int Perfecto(int n)
 {
@@ -46,19 +53,22 @@ int Perfecto(int n)
 		return 0;
 }
 
-void MostrarPerfectos(int n)
+void MostrarPerfectos(int n, int *cont)
 {
-	int flag=0;
-	int aux,j;
-	int i=5;
+	int flag=0;(*cont)++;
+	int aux,j;(*cont)++;
+	int i=5;(*cont)++;
 	while(flag<n)//now means the quantity of numbers
 	{		
-		i++;
-		aux=Perfecto(i);
+		(*cont)++;//condition of while
+		i++;(*cont)++;
+		aux=Perfecto(i);(*cont)++;
 		if(aux!=0)
 		{
-			printf("%d\n",aux);
-			flag++;
+			(*cont)++;//condition of if
+			printf("%d\n",aux);(*cont)++;
+			flag++;(*cont)++;
 		}
 	}
+	(*cont)++;//last condition of while
 }
