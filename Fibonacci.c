@@ -1,10 +1,10 @@
-//Instituto PolitÈcnico Nacional
+//Instituto Polit√©cnico Nacional
 //Escuela Superior de Computo
-//An·lisis de Algoritmos
+//An√°lisis de Algoritmos
 //3CV11
-//Pr·ctica 3
+//Pr√°ctica 3
 //Flores Castro Luis Antonio
-//Profesor: Luna Benoso BenjamÌn.
+//Profesor: Luna Benoso Benjam√≠n.
 #include<stdio.h>
 #include<stdlib.h>
 void principal();
@@ -28,6 +28,7 @@ void principal()
 	printf("Fibonacci's Series\n");
 	printf("Enter n: ");
 	scanf("%d",&stop);
+	printf("\nFibonacci iterativo\n");
 	fibonacci(stop,cont);
 	printf("Pasos: %d", *cont);
 	printf("\n\nFibonacci recursivo\n");
@@ -50,7 +51,7 @@ void fibonacci(int n,int *cont)
 		begin = begin + copy;(*cont)++;
 		copy = begin - copy;(*cont)++;
 	}
-	(*cont)++;//ultima comprobaciÛn de for
+	(*cont)++;//ultima comprobaci√≥n de for
 }
 
 void fibonacci_recursivo(long begin, long copy, int n,int *cont2)
@@ -63,5 +64,5 @@ void fibonacci_recursivo(long begin, long copy, int n,int *cont2)
 		copy = begin - copy;(*cont2)++;
 		n--;(*cont2)++;
 		fibonacci_recursivo(begin,copy,n,cont2);(*cont2)++;
-	}(*cont2)++;//ultima comprobaciÛn de if
+	}(*cont2)++;//ultima comprobaci√≥n de if
 }
